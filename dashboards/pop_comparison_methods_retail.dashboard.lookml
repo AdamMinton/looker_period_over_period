@@ -238,8 +238,8 @@
     limit: 500
     column_limit: 50
     show_view_names: false
-    listen:
-      "Custom Year": order_items_native.created_custom_year
+    filters:
+      order_items_native.created_custom_date: 1 custom years
     row: 6
     col: 0
     width: 12
@@ -252,11 +252,21 @@
     explore: order_items_native
     type: looker_line
     fields: [order_items_native.orders_count, order_items_native.orders_count_last_year, order_items_native.created_custom_period]
-    sorts: [order_items_native.created_custom_period]
+    sorts: [order_items_native.created_custom_period desc]
     limit: 500
     column_limit: 50
-    listen:
-      "Custom Year": order_items_native.created_custom_year
+    x_axis_gridlines: false
+    y_axis_gridlines: true
+    show_view_names: false
+    show_y_axis_labels: true
+    show_y_axis_ticks: true
+    show_x_axis_label: true
+    show_x_axis_ticks: true
+    y_axis_combined: true
+    show_null_points: true
+    interpolation: linear
+    filters:
+      order_items_native.created_custom_date: 1 custom years
     row: 6
     col: 12
     width: 12
@@ -280,17 +290,3 @@
     explore: order_items_liquid
     listens_to_filters: []
     field: fiscal_calendar.fiscal_window
-
-  - name: "Custom Year"
-    title: "Custom Year"
-    type: field_filter
-    default_value: "FY2025, FY2026"
-    allow_multiple_values: true
-    required: false
-    ui_config:
-      type: tag_list
-      display: inline
-    model: looker_period_over_period
-    explore: order_items_native
-    listens_to_filters: []
-    field: order_items_native.created_custom_year
