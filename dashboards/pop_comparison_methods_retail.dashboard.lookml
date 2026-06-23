@@ -126,6 +126,7 @@
           <div style="flex: 1; background: #E6F4EA; border-radius: 4px; padding: 12px; border-left: 4px solid #137333;">
             <h4 style="color: #137333; margin: 0 0 6px 0;">Pros</h4>
             <ul style="margin: 0; padding-left: 20px; font-size: 13px; color: #137333; line-height: 1.4;">
+              <li>Highly efficient for YoY comparisons (scans only the compared periods).</li>
               <li>Extremely performant, scanning only the needed days.</li>
               <li>Clean, accurate prior-period mappings via bridge tables.</li>
             </ul>
@@ -133,6 +134,7 @@
           <div style="flex: 1; background: #FCE8E6; border-radius: 4px; padding: 12px; border-left: 4px solid #C5221F;">
             <h4 style="color: #C5221F; margin: 0 0 6px 0;">Cons</h4>
             <ul style="margin: 0; padding-left: 20px; font-size: 13px; color: #C5221F; line-height: 1.4;">
+              <li>Inefficient for simple single-period (TY) queries due to fixed preamble/join overhead.</li>
               <li>Cannot show different periods (MTD vs YTD) side-by-side in columns in the same explore query.</li>
             </ul>
           </div>
@@ -209,6 +211,7 @@
           <div style="flex: 1; background: #E6F4EA; border-radius: 4px; padding: 12px; border-left: 4px solid #137333;">
             <h4 style="color: #137333; margin: 0 0 6px 0;">Pros</h4>
             <ul style="margin: 0; padding-left: 20px; font-size: 13px; color: #137333; line-height: 1.4;">
+              <li>Efficient for single-period (TY) only queries, scanning exactly the filtered timeframe.</li>
               <li>Native platform functionality (drag-and-drop PoP).</li>
               <li>Simple to maintain and model without complex Liquid scripts.</li>
             </ul>
@@ -216,6 +219,7 @@
           <div style="flex: 1; background: #FCE8E6; border-radius: 4px; padding: 12px; border-left: 4px solid #C5221F;">
             <h4 style="color: #C5221F; margin: 0 0 6px 0;">Cons</h4>
             <ul style="margin: 0; padding-left: 20px; font-size: 13px; color: #C5221F; line-height: 1.4;">
+              <li>Inefficient for YoY comparisons: forces broad contiguous range scans covering all years.</li>
               <li>Scans a contiguous block of all compared periods (e.g. 14 months scan for a 1-month query).</li>
               <li>Fails to handle Week 53 shifts (leads to NULL values for Week 53 comparisons).</li>
             </ul>
