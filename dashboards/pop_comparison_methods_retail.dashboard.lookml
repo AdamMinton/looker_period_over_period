@@ -203,7 +203,7 @@
           <strong>How it works:</strong> Employs Looker's native <code>calendar_definition</code> and <code>period_over_period</code> measures.
         </p>
         <p style="font-size: 14px; line-height: 1.5; color: #3C4043; border-top: 1px dashed #E0E0E0; padding-top: 8px;">
-          <strong>Partition Scan Critique:</strong> <span style="color: #E27200; font-weight: bold;">Moderate Efficiency (Expanded Range Scan)</span>. While BigQuery prunes partitions using runtime variables, it must scan a contiguous range covering all compared periods. A 1-month filter scans 14 months of partitions; a 1-year filter scans 2 full years.
+          <strong>Partition Scan Critique:</strong> <span style="color: #E27200; font-weight: bold;">Moderately Inefficient (Expanded Range Scan)</span>. While BigQuery prunes partitions using runtime variables, it must scan a contiguous range covering all compared periods. A 1-month filter scans 14 months of partitions; a 1-year filter scans 2 full years.
         </p>
         <div style="display: flex; gap: 16px; margin-top: 12px;">
           <div style="flex: 1; background: #E6F4EA; border-radius: 4px; padding: 12px; border-left: 4px solid #137333;">
