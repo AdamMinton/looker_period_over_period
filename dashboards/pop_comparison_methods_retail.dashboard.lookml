@@ -238,8 +238,8 @@
     limit: 500
     column_limit: 50
     show_view_names: false
-    filters:
-      order_items_native.created_custom_date: 1 custom years
+    listen:
+      "Custom Date Filter": order_items_native.created_custom_date
     row: 7
     col: 0
     width: 12
@@ -265,8 +265,8 @@
     y_axis_combined: true
     show_null_points: true
     interpolation: linear
-    filters:
-      order_items_native.created_custom_date: 1 custom years
+    listen:
+      "Custom Date Filter": order_items_native.created_custom_date
     row: 7
     col: 12
     width: 12
@@ -290,3 +290,17 @@
     explore: order_items_liquid
     listens_to_filters: []
     field: fiscal_calendar.fiscal_window
+
+  - name: "Custom Date Filter"
+    title: "Custom Date Filter"
+    type: field_filter
+    default_value: "1 custom years"
+    allow_multiple_values: true
+    required: false
+    ui_config:
+      type: advanced
+      display: inline
+    model: looker_period_over_period
+    explore: order_items_native
+    listens_to_filters: []
+    field: order_items_native.created_custom_date
