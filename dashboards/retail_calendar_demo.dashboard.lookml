@@ -6,6 +6,8 @@
   filters_location_top: false
 
   tabs:
+  - name: 'PoP Compatibility Guide'
+    label: 'PoP Compatibility Guide'
   - name: 'Option 1: Parameter Based'
     label: 'Option 1: Parameter Based'
   - name: 'Option 2: Measure Based'
@@ -16,6 +18,100 @@
     label: 'Option 4: Custom Calendar'
 
   elements:
+  # ==========================================
+  # COMPATIBILITY GUIDE TAB
+  # ==========================================
+  - name: 'PoP Compatibility Guide Content'
+    type: text
+    body_text: |-
+      <div style="border: 1px solid #E0E0E0; border-radius: 8px; padding: 20px; background-color: #FFFFFF; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+        <h2 style="color: #1A73E8; margin-top: 0; border-bottom: 2px solid #1A73E8; padding-bottom: 8px;">Guide: Basic PoP Methods vs. Custom Fiscal Calendars</h2>
+        <p style="font-size: 14px; color: #5F6368; margin-bottom: 20px;">
+          Standard Looker PoP methods are designed for the Gregorian calendar. When applied to custom fiscal/retail calendars (like NRF 4-5-4), automated date-math methods break. Below is the compatibility guide for each method.
+        </p>
+        <table style="width: 100%; border-collapse: collapse; font-family: sans-serif; font-size: 13px; text-align: left;">
+          <thead>
+            <tr style="background-color: #F8F9FA; border-bottom: 2px solid #E0E0E0;">
+              <th style="padding: 12px; font-weight: bold; color: #3C4043; width: 10%;">Method</th>
+              <th style="padding: 12px; font-weight: bold; color: #3C4043; width: 25%;">Description</th>
+              <th style="padding: 12px; font-weight: bold; color: #3C4043; width: 20%;">Works with Custom Calendars?</th>
+              <th style="padding: 12px; font-weight: bold; color: #3C4043; width: 15%;">Partition Scan Efficiency</th>
+              <th style="padding: 12px; font-weight: bold; color: #3C4043; width: 30%;">Mechanics & Limitations</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid #E0E0E0;">
+              <td style="padding: 12px; font-weight: bold; color: #1A73E8;">Method 1</td>
+              <td style="padding: 12px;">Pivoted Native Timeframes</td>
+              <td style="padding: 12px; color: #C5221F; font-weight: bold;">❌ No</td>
+              <td style="padding: 12px; color: #137333;">High</td>
+              <td style="padding: 12px;">Relies on Looker's native date dimension groups which are strictly Gregorian.</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #E0E0E0;">
+              <td style="padding: 12px; font-weight: bold; color: #1A73E8;">Method 2</td>
+              <td style="padding: 12px;">Pivoted with Liquid</td>
+              <td style="padding: 12px; color: #C5221F; font-weight: bold;">❌ No</td>
+              <td style="padding: 12px; color: #137333;">High</td>
+              <td style="padding: 12px;">Still utilizes standard Gregorian date dimensions for its calculations.</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #E0E0E0;">
+              <td style="padding: 12px; font-weight: bold; color: #1A73E8;">Method 3</td>
+              <td style="padding: 12px;">Current vs Prior (Offset)</td>
+              <td style="padding: 12px; color: #C5221F; font-weight: bold;">❌ No</td>
+              <td style="padding: 12px; color: #137333;">High</td>
+              <td style="padding: 12px;">Uses SQL date-math (e.g. <code>DATE_ADD</code>). Shifting by 1 year or 364 days shifts week boundaries and breaks retail season alignment.</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #E0E0E0;">
+              <td style="padding: 12px; font-weight: bold; color: #1A73E8;">Method 4</td>
+              <td style="padding: 12px;">Current vs Many Prior (Offsets)</td>
+              <td style="padding: 12px; color: #C5221F; font-weight: bold;">❌ No</td>
+              <td style="padding: 12px; color: #137333;">High</td>
+              <td style="padding: 12px;">Fails for the same reason as Method 3 (Gregorian date offsets are non-linear in custom calendars).</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #E0E0E0;">
+              <td style="padding: 12px; font-weight: bold; color: #1A73E8;">Method 5</td>
+              <td style="padding: 12px;">Current vs Custom Arbitrary Range</td>
+              <td style="padding: 12px; color: #E27200; font-weight: bold;">⚠️ Manual Only</td>
+              <td style="padding: 12px; color: #137333;">High</td>
+              <td style="padding: 12px;">Works only if the user manually selects the correct custom calendar start/end dates. Prone to human error.</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #E0E0E0;">
+              <td style="padding: 12px; font-weight: bold; color: #1A73E8;">Method 6</td>
+              <td style="padding: 12px;">Any Two Arbitrary Ranges</td>
+              <td style="padding: 12px; color: #E27200; font-weight: bold;">⚠️ Manual Only</td>
+              <td style="padding: 12px; color: #137333;">High</td>
+              <td style="padding: 12px;">Works only if the user manually configures both date ranges to match the fiscal calendar.</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #E0E0E0;">
+              <td style="padding: 12px; font-weight: bold; color: #1A73E8;">Method 7</td>
+              <td style="padding: 12px;">Arbitrary vs Directly Prior</td>
+              <td style="padding: 12px; color: #C5221F; font-weight: bold;">❌ No</td>
+              <td style="padding: 12px; color: #137333;">High</td>
+              <td style="padding: 12px;">Automatically offsets backward by the number of days selected, which does not map to custom fiscal months.</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #E0E0E0;">
+              <td style="padding: 12px; font-weight: bold; color: #1A73E8;">Method 8</td>
+              <td style="padding: 12px;">Arbitrary vs Many Prior</td>
+              <td style="padding: 12px; color: #C5221F; font-weight: bold;">❌ No</td>
+              <td style="padding: 12px; color: #137333;">High</td>
+              <td style="padding: 12px;">Offset calculations are based on standard Gregorian interval shifts.</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #E0E0E0;">
+              <td style="padding: 12px; font-weight: bold; color: #1A73E8;">Method 9</td>
+              <td style="padding: 12px;">Looker Native PoP Measure</td>
+              <td style="padding: 12px; color: #E27200; font-weight: bold;">Conditional</td>
+              <td style="padding: 12px; color: #C5221F;">Low</td>
+              <td style="padding: 12px;">Works only if combined with <code>type: custom_calendar</code> configuration (Option 4). Otherwise behaves as Gregorian. Bypasses BigQuery partition pruning.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    row: 0
+    col: 0
+    width: 24
+    height: 12
+    tab_name: 'PoP Compatibility Guide'
+
   # ==========================================
   # OPTION 1
   # ==========================================
