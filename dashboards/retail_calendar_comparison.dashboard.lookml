@@ -15,8 +15,6 @@
     label: 'Option 3: Pivoted Grid'
   - name: 'Option 4: Custom Calendar'
     label: 'Option 4: Custom Calendar'
-  - name: 'Option 5: Custom Visualization'
-    label: 'Option 5: Custom Visualization'
   elements:
   - name: ''
     type: text
@@ -222,75 +220,6 @@
     width: 24
     height: 6
     tab_name: 'Option 3: Pivoted Grid'
-  - name: " (4)"
-    type: text
-    title_text: ''
-    subtitle_text: ''
-    body_text: |-
-      **Method**: Uses a custom visualization to arrange icons in desired format. You can use Option 1 with merged results for each separate period or Option 2.
-
-      **Pros**:
-      - Complete custom layout that can be fine tuned to exact requirements needed.
-
-      **Cons**:
-      - None
-    row: 0
-    col: 0
-    width: 24
-    height: 3
-    tab_name: 'Option 5: Custom Visualization'
-  - title: KPI Canvas
-    name: KPI Canvas
-    model: looker_period_over_period
-    explore: order_items_option_2
-    type: kpi_canvas_git
-    fields: [order_items_option_2.mtd_orders, order_items_option_2.ytd_orders, order_items_option_2.ly_mtd_orders,
-      order_items_option_2.ly_ytd_orders]
-    limit: 500
-    column_limit: 50
-    hidden_fields: []
-    hidden_points_if_no: []
-    series_labels: {}
-    show_view_names: false
-    edit_mode: false
-    row_integrity: false
-    compact_mode: true
-    scale_to_fit: true
-    canvas_layout_state: '{"timestamp":1777497867186,"items":[{"i":"77yf5j2az","type":"text","x":0,"y":2,"w":1,"h":2,"style":{"fontSize":"24px","textAlign":"center","color":"#e60a0a"},"content":"Orders"},{"i":"okhhiov4s","type":"text","x":1,"y":0,"w":1,"h":2,"style":{"fontSize":"24px","textAlign":"center"},"content":"MTD"},{"i":"6nx7n4ren","type":"text","x":0,"y":0,"w":1,"h":2,"style":{"fontSize":"24px","textAlign":"center"},"content":""},{"i":"1uu9e4clk","fieldId":"order_items_option_2.mtd_orders:0","type":"measure","x":1,"y":2,"w":1,"h":2,"style":{"fontSize":"24px","textAlign":"center"},"value":"7,805","value_raw":7805,"html":"\n  7.8K\n  ","showLabel":false},{"i":"ekjetuaa8","type":"text","x":2,"y":0,"w":1,"h":2,"style":{"fontSize":"24px","textAlign":"center"},"content":"YTD"},{"i":"iz3yziv5t","fieldId":"order_items_option_2.ytd_orders:0","type":"measure","x":2,"y":2,"w":1,"h":2,"style":{"fontSize":"24px","textAlign":"center"},"value":"26,953","value_raw":26953,"html":"\n  27.0K\n  ","showLabel":false}]}'
-    x_axis_gridlines: false
-    y_axis_gridlines: true
-    show_y_axis_labels: true
-    show_y_axis_ticks: true
-    y_axis_tick_density: default
-    y_axis_tick_density_custom: 5
-    show_x_axis_label: true
-    show_x_axis_ticks: true
-    y_axis_scale_mode: linear
-    x_axis_reversed: false
-    y_axis_reversed: false
-    plot_size_by_field: false
-    trellis: ''
-    stacking: ''
-    limit_displayed_rows: false
-    legend_position: center
-    point_style: none
-    show_value_labels: false
-    label_density: 25
-    x_axis_scale: auto
-    y_axis_combined: true
-    ordering: none
-    show_null_labels: false
-    show_totals_labels: false
-    show_silhouette: false
-    totals_color: "#808080"
-    defaults_version: 0
-    title_hidden: true
-    listen: {}
-    row: 3
-    col: 0
-    width: 11
-    height: 5
-    tab_name: 'Option 5: Custom Visualization'
   - name: " (5)"
     type: text
     body_text: |-
@@ -315,7 +244,7 @@
     type: looker_line
     fields: [order_items_option_4.orders_count, order_items_option_4.orders_count_last_year, order_items_option_4.created_custom_year]
     filters:
-      order_items_option_4.created_custom_year: "FY1960"
+      order_items_option_4.created_custom_year: "FY2025, FY2026"
     sorts: [order_items_option_4.created_custom_year desc]
     limit: 500
     column_limit: 50
