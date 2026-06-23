@@ -1,5 +1,13 @@
 project_name: "looker_period_over_period"
 
+constant: GCP_PROJECT {
+  value: "adamminton-sandbox"
+}
+
+constant: CALENDAR_DATASET {
+  value: "custom_calendars"
+}
+
 constant: wtd_measures { value: "wtd_orders,ly_wtd_orders" }
 constant: mtd_measures { value: "mtd_orders,ly_mtd_orders" }
 constant: qtd_measures { value: "qtd_orders,ly_qtd_orders" }

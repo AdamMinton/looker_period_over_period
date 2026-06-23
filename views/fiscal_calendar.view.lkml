@@ -1,7 +1,7 @@
 view: fiscal_calendar {
   fields_hidden_by_default: yes
 
-  sql_table_name: `adamminton-sandbox.custom_calendars.fiscal_calendar` ;;
+  sql_table_name: `@{GCP_PROJECT}.@{CALENDAR_DATASET}.fiscal_calendar` ;;
 
   dimension_group: ad_shift_d {
     type: time

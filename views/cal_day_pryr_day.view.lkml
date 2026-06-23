@@ -1,7 +1,7 @@
 view: cal_day_pryr_day {
   fields_hidden_by_default: yes
 
-  sql_table_name: `adamminton-sandbox.custom_calendars.cal_day_pryr_day` ;;
+  sql_table_name: `@{GCP_PROJECT}.@{CALENDAR_DATASET}.cal_day_pryr_day` ;;
 
   dimension: greg_d {
     type: date

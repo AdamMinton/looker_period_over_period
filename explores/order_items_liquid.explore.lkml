@@ -14,8 +14,8 @@ explore: order_items_liquid {
   }
 
   sql_preamble:
-  {%- assign v_fiscal_calendar_table = 'adamminton-sandbox.custom_calendars.fiscal_calendar' -%}
-  {%- assign v_comp_table = 'adamminton-sandbox.custom_calendars.cal_day_pryr_day' -%}
+  {%- assign v_fiscal_calendar_table = '@{GCP_PROJECT}.@{CALENDAR_DATASET}.fiscal_calendar' -%}
+  {%- assign v_comp_table = '@{GCP_PROJECT}.@{CALENDAR_DATASET}.cal_day_pryr_day' -%}
   {%- assign v_parameter_selected = fiscal_calendar.fiscal_window._parameter_value -%}
   {%- if anchor_date.anchor_date._in_query -%}
     {%- assign param_val = anchor_date.anchor_date._parameter_value -%}

@@ -1,5 +1,5 @@
 view: fiscal_calendar_custom {
-  sql_table_name: `adamminton-sandbox.custom_calendars.fiscal_calendar_looker` ;;
+  sql_table_name: `@{GCP_PROJECT}.@{CALENDAR_DATASET}.fiscal_calendar_looker` ;;
 
   calendar_definition: {
     reference_date: reference_date
@@ -107,7 +107,7 @@ view: fiscal_calendar_custom {
 
   dimension: day_of_fiscal_year {
     type: number
-    sql: DATE_DIFF(DATE(${TABLE}.reference_date), (SELECT MIN(DATE(r2.reference_date)) FROM `adamminton-sandbox.custom_calendars.fiscal_calendar_looker` r2 WHERE r2.fiscal_year_num = ${TABLE}.fiscal_year_num), DAY) + 1 ;;
+    sql: DATE_DIFF(DATE(${TABLE}.reference_date), (SELECT MIN(DATE(r2.reference_date)) FROM `@{GCP_PROJECT}.@{CALENDAR_DATASET}.fiscal_calendar_looker` r2 WHERE r2.fiscal_year_num = ${TABLE}.fiscal_year_num), DAY) + 1 ;;
   }
 
   dimension: passes_pop_filter {
@@ -118,10 +118,10 @@ view: fiscal_calendar_custom {
         WHEN {% parameter order_items_native.pop_comparison_type %} = 'Period to Date' THEN
           ${day_of_fiscal_year} <= (
             SELECT DATE_DIFF(CURRENT_DATE("America/Chicago"), MIN(DATE(r2.reference_date)), DAY) + 1
-            FROM `adamminton-sandbox.custom_calendars.fiscal_calendar_looker` r2
+            FROM `@{GCP_PROJECT}.@{CALENDAR_DATASET}.fiscal_calendar_looker` r2
             WHERE r2.fiscal_year_num = (
               SELECT r3.fiscal_year_num
-              FROM `adamminton-sandbox.custom_calendars.fiscal_calendar_looker` r3
+              FROM `@{GCP_PROJECT}.@{CALENDAR_DATASET}.fiscal_calendar_looker` r3
               WHERE DATE(r3.reference_date) = CURRENT_DATE("America/Chicago")
             )
           )
