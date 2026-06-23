@@ -113,8 +113,8 @@ view: fiscal_calendar_custom {
     type: yesno
     sql:
       CASE
-        WHEN {% parameter order_items_option_4.pop_comparison_type %} = 'Full Period' THEN TRUE
-        WHEN {% parameter order_items_option_4.pop_comparison_type %} = 'Period to Date' THEN
+        WHEN {% parameter order_items_native.pop_comparison_type %} = 'Full Period' THEN TRUE
+        WHEN {% parameter order_items_native.pop_comparison_type %} = 'Period to Date' THEN
           ${day_of_fiscal_year} <= (
             SELECT DATE_DIFF(CURRENT_DATE("America/Chicago"), MIN(DATE(r2.reference_date)), DAY) + 1
             FROM `adamminton-sandbox.custom_calendars.fiscal_calendar_looker` r2

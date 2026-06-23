@@ -1,6 +1,6 @@
 include: "/views/order_items.view.lkml"
 
-view: order_items_option_1 {
+view: order_items_liquid {
   extends: [order_items]
 
   # --- Total Orders ---

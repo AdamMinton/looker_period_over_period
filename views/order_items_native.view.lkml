@@ -1,7 +1,7 @@
 include: "/views/order_items.view.lkml"
 include: "/views/fiscal_calendar_custom.view.lkml"
 
-view: order_items_option_4 {
+view: order_items_native {
   extends: [order_items]
 
   parameter: pop_comparison_type {
