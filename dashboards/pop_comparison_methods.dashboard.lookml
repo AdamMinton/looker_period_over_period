@@ -173,7 +173,10 @@
     type: text
     body_text: |-
       <div style="border: 1px solid #E0E0E0; border-radius: 8px; padding: 16px; background-color: #F8F9FA; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
-        <h2 style="color: #1A73E8; margin-top: 0; border-bottom: 2px solid #1A73E8; padding-bottom: 8px;">Method 1: Any Two Native Timeframes</h2>
+        <h2 style="color: #1A73E8; margin-top: 0; border-bottom: 2px solid #1A73E8; padding-bottom: 8px; display: flex; justify-content: space-between; align-items: center;">
+          <span>Method 1: Any Two Native Timeframes</span>
+          <a href="https://discuss.google.dev/t/methods-for-period-over-period-pop-analysis-in-looker-method-1-any-two-native-timeframes/119255" target="_blank" style="font-size: 13px; color: #1A73E8; text-decoration: none; font-weight: normal; border: 1px solid #1A73E8; padding: 4px 8px; border-radius: 4px;">Original Docs ↗</a>
+        </h2>
         <p style="font-size: 14px; line-height: 1.5; color: #3C4043;">
           <strong>Overview:</strong> This method uses Looker's built-in date dimension groups (like <code>created_month_name</code> and <code>created_year</code>) and pivots in the Explore to compare periods.
         </p>
@@ -257,7 +260,10 @@
     type: text
     body_text: |-
       <div style="border: 1px solid #E0E0E0; border-radius: 8px; padding: 16px; background-color: #F8F9FA; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
-        <h2 style="color: #1A73E8; margin-top: 0; border-bottom: 2px solid #1A73E8; padding-bottom: 8px;">Method 2: Any Two Native Timeframes (with Liquid)</h2>
+        <h2 style="color: #1A73E8; margin-top: 0; border-bottom: 2px solid #1A73E8; padding-bottom: 8px; display: flex; justify-content: space-between; align-items: center;">
+          <span>Method 2: Any Two Native Timeframes (with Liquid)</span>
+          <a href="https://discuss.google.dev/t/methods-for-pop-analysis-in-looker-method-2-any-two-native-timeframes-with-liquid/119257" target="_blank" style="font-size: 13px; color: #1A73E8; text-decoration: none; font-weight: normal; border: 1px solid #1A73E8; padding: 4px 8px; border-radius: 4px;">Original Docs ↗</a>
+        </h2>
         <p style="font-size: 14px; line-height: 1.5; color: #3C4043;">
           <strong>Overview:</strong> Adds parameters to let users dynamically select the row breakdown granularity and pivot comparison period directly on a dashboard using drop-downs.
         </p>
@@ -343,7 +349,10 @@
     type: text
     body_text: |-
       <div style="border: 1px solid #E0E0E0; border-radius: 8px; padding: 16px; background-color: #F8F9FA; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
-        <h2 style="color: #1A73E8; margin-top: 0; border-bottom: 2px solid #1A73E8; padding-bottom: 8px;">Method 9: Looker Built-in PoP Measures</h2>
+        <h2 style="color: #1A73E8; margin-top: 0; border-bottom: 2px solid #1A73E8; padding-bottom: 8px; display: flex; justify-content: space-between; align-items: center;">
+          <span>Method 9: Looker Built-in PoP Measures</span>
+          <a href="https://docs.cloud.google.com/looker/docs/period-over-period" target="_blank" style="font-size: 13px; color: #1A73E8; text-decoration: none; font-weight: normal; border: 1px solid #1A73E8; padding: 4px 8px; border-radius: 4px;">Original Docs ↗</a>
+        </h2>
         <p style="font-size: 14px; line-height: 1.5; color: #3C4043;">
           <strong>Overview:</strong> Uses Looker's built-in <code>type: period_over_period</code> measures. Looker automatically computes the SQL for previous period, difference, and percent change.
         </p>
@@ -423,7 +432,10 @@
     type: text
     body_text: |-
       <div style="border: 1px solid #E0E0E0; border-radius: 8px; padding: 16px; background-color: #F8F9FA; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
-        <h2 style="color: #1A73E8; margin-top: 0; border-bottom: 2px solid #1A73E8; padding-bottom: 8px;">Method 3: Current Period and Previous Period</h2>
+        <h2 style="color: #1A73E8; margin-top: 0; border-bottom: 2px solid #1A73E8; padding-bottom: 8px; display: flex; justify-content: space-between; align-items: center;">
+          <span>Method 3: Current Period and Previous Period</span>
+          <a href="https://discuss.google.dev/t/methods-for-period-over-period-pop-analysis-in-looker-method-3-current-period-and-previous-period/119259" target="_blank" style="font-size: 13px; color: #1A73E8; text-decoration: none; font-weight: normal; border: 1px solid #1A73E8; padding: 4px 8px; border-radius: 4px;">Original Docs ↗</a>
+        </h2>
         <p style="font-size: 14px; line-height: 1.5; color: #3C4043;">
           <strong>Overview:</strong> Dynamically calculates the previous period of the exact same length using a Date filter and Liquid, and aligns them on a relative day-of-period axis.
         </p>
@@ -509,7 +521,10 @@
     type: text
     body_text: |-
       <div style="border: 1px solid #E0E0E0; border-radius: 8px; padding: 16px; background-color: #F8F9FA; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
-        <h2 style="color: #1A73E8; margin-top: 0; border-bottom: 2px solid #1A73E8; padding-bottom: 8px;">Method 4: Current Period and Many Previous Periods</h2>
+        <h2 style="color: #1A73E8; margin-top: 0; border-bottom: 2px solid #1A73E8; padding-bottom: 8px; display: flex; justify-content: space-between; align-items: center;">
+          <span>Method 4: Current Period and Many Previous Periods</span>
+          <a href="https://discuss.google.dev/t/methods-for-period-over-period-pop-analysis-in-looker-method-4-current-period-and-many-previous-periods/119262" target="_blank" style="font-size: 13px; color: #1A73E8; text-decoration: none; font-weight: normal; border: 1px solid #1A73E8; padding: 4px 8px; border-radius: 4px;">Original Docs ↗</a>
+        </h2>
         <p style="font-size: 14px; line-height: 1.5; color: #3C4043;">
           <strong>Overview:</strong> Extends Method 3, using a parameter to dynamically select the number of prior periods to compare against side-by-side (e.g., 2, 3, or 4 periods ago).
         </p>
@@ -597,7 +612,10 @@
     type: text
     body_text: |-
       <div style="border: 1px solid #E0E0E0; border-radius: 8px; padding: 16px; background-color: #F8F9FA; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
-        <h2 style="color: #1A73E8; margin-top: 0; border-bottom: 2px solid #1A73E8; padding-bottom: 8px;">Method 5: Current Period and Any Arbitrary Period</h2>
+        <h2 style="color: #1A73E8; margin-top: 0; border-bottom: 2px solid #1A73E8; padding-bottom: 8px; display: flex; justify-content: space-between; align-items: center;">
+          <span>Method 5: Current Period and Any Arbitrary Period</span>
+          <a href="https://discuss.google.dev/t/methods-for-period-over-period-pop-analysis-in-looker-method-5-current-period-and-any-arbitrary-period/119258" target="_blank" style="font-size: 13px; color: #1A73E8; text-decoration: none; font-weight: normal; border: 1px solid #1A73E8; padding: 4px 8px; border-radius: 4px;">Original Docs ↗</a>
+        </h2>
         <p style="font-size: 14px; line-height: 1.5; color: #3C4043;">
           <strong>Overview:</strong> Allows users to define a completely custom, arbitrary previous date range to compare against the current period, aligning the date axes.
         </p>
@@ -682,7 +700,10 @@
     type: text
     body_text: |-
       <div style="border: 1px solid #E0E0E0; border-radius: 8px; padding: 16px; background-color: #F8F9FA; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
-        <h2 style="color: #1A73E8; margin-top: 0; border-bottom: 2px solid #1A73E8; padding-bottom: 8px;">Method 6: Any Two Arbitrary Periods</h2>
+        <h2 style="color: #1A73E8; margin-top: 0; border-bottom: 2px solid #1A73E8; padding-bottom: 8px; display: flex; justify-content: space-between; align-items: center;">
+          <span>Method 6: Any Two Arbitrary Periods</span>
+          <a href="https://discuss.google.dev/t/methods-for-period-over-period-pop-analysis-in-looker-method-6-any-two-arbitrary-periods/119273" target="_blank" style="font-size: 13px; color: #1A73E8; text-decoration: none; font-weight: normal; border: 1px solid #1A73E8; padding: 4px 8px; border-radius: 4px;">Original Docs ↗</a>
+        </h2>
         <p style="font-size: 14px; line-height: 1.5; color: #3C4043;">
           <strong>Overview:</strong> Google Analytics style PoP. Compares two manually-defined arbitrary periods by calculating the days elapsed since the start of each range.
         </p>
@@ -768,7 +789,10 @@
     type: text
     body_text: |-
       <div style="border: 1px solid #E0E0E0; border-radius: 8px; padding: 16px; background-color: #F8F9FA; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
-        <h2 style="color: #1A73E8; margin-top: 0; border-bottom: 2px solid #1A73E8; padding-bottom: 8px;">Method 7: Arbitrary Period and Directly Previous Period</h2>
+        <h2 style="color: #1A73E8; margin-top: 0; border-bottom: 2px solid #1A73E8; padding-bottom: 8px; display: flex; justify-content: space-between; align-items: center;">
+          <span>Method 7: Arbitrary Period and Directly Previous Period</span>
+          <a href="https://discuss.google.dev/t/methods-for-period-over-period-pop-analysis-in-looker-method-7-arbitrary-period-and-directly-previous-period/119267" target="_blank" style="font-size: 13px; color: #1A73E8; text-decoration: none; font-weight: normal; border: 1px solid #1A73E8; padding: 4px 8px; border-radius: 4px;">Original Docs ↗</a>
+        </h2>
         <p style="font-size: 14px; line-height: 1.5; color: #3C4043;">
           <strong>Overview:</strong> Dynamically calculates the preceding period of the exact same length as the selected date range. Best suited for Single Value visualization comparison tiles.
         </p>
@@ -831,7 +855,10 @@
     type: text
     body_text: |-
       <div style="border: 1px solid #E0E0E0; border-radius: 8px; padding: 16px; background-color: #F8F9FA; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
-        <h2 style="color: #1A73E8; margin-top: 0; border-bottom: 2px solid #1A73E8; padding-bottom: 8px;">Method 8: Arbitrary Period and Many Previous Periods</h2>
+        <h2 style="color: #1A73E8; margin-top: 0; border-bottom: 2px solid #1A73E8; padding-bottom: 8px; display: flex; justify-content: space-between; align-items: center;">
+          <span>Method 8: Arbitrary Period and Many Previous Periods</span>
+          <a href="https://discuss.google.dev/t/methods-for-period-over-period-pop-analysis-in-looker-method-8-arbitrary-period-and-many-previous-periods/119275" target="_blank" style="font-size: 13px; color: #1A73E8; text-decoration: none; font-weight: normal; border: 1px solid #1A73E8; padding: 4px 8px; border-radius: 4px;">Original Docs ↗</a>
+        </h2>
         <p style="font-size: 14px; line-height: 1.5; color: #3C4043;">
           <strong>Overview:</strong> The most complex but flexible method. Joins a numbers table twice to compute dynamic date offsets for rows and pivots, avoiding symmetric aggregates.
         </p>
