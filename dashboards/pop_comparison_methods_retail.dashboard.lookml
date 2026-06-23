@@ -120,7 +120,7 @@
           <strong>How it works:</strong> The user selects a time frame (e.g., WTD, MTD, YTD) via the <code>Fiscal Window</code> parameter. A SQL preamble runs first to compute the exact calendar dates for this year and last year, and restricts the scan range in <code>sql_always_where</code>.
         </p>
         <p style="font-size: 14px; line-height: 1.5; color: #3C4043; border-top: 1px dashed #E0E0E0; padding-top: 8px;">
-          <strong>Partition Scan Critique:</strong> <span style="color: #137333; font-weight: bold;">Highly Efficient</span>. BigQuery successfully prunes partitions because the fact table is filtered using <code>IN UNNEST(constant_array)</code> where the array of dates is pre-computed by the preamble.
+          <strong>Partition Scan Critique:</strong> <span style="color: #137333; font-weight: bold;">Moderately Efficient (Targeted Scan)</span>. BigQuery successfully prunes partitions to only scan the compared timeframes (e.g. 2 months scan for a 1-month comparison).
         </p>
         <div style="display: flex; gap: 16px; margin-top: 12px;">
           <div style="flex: 1; background: #E6F4EA; border-radius: 4px; padding: 12px; border-left: 4px solid #137333;">
