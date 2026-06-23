@@ -1,41 +1,5 @@
 project_name: "looker_period_over_period"
 
-constant: html_large_value_format {
-  value: "{% if value >= 1000000000 %}
-  {{ value | divided_by: 1000000000.0 | round: 2 }}B
-  {% elsif value <= -1000000000 %}
-  {{ value | divided_by: 1000000000.0 | round: 2 }}B
-  {% elsif value >= 1000000 %}
-  {{ value | divided_by: 1000000.0 | round: 1 }}M
-  {% elsif value <= -1000000 %}
-  {{ value | divided_by: 1000000.0 | round: 1 }}M
-  {% elsif value >= 1000 %}
-  {{ value | divided_by: 1000.0 | round: 1 }}K
-  {% elsif value <= -1000 %}
-  {{ value | divided_by: 1000.0 | round: 1 }}K
-  {% else %}
-  {{ rendered_value }}
-  {% endif %}"
-}
-
-constant: html_large_value_format_usd {
-  value: "{% if value >= 1000000000 %}
-  ${{ value | divided_by: 1000000000.0 | round: 2 }}B
-  {% elsif value <= -1000000000 %}
-  ${{ value | divided_by: 1000000000.0 | round: 2 }}B
-  {% elsif value >= 1000000 %}
-  ${{ value | divided_by: 1000000.0 | round: 1 }}M
-  {% elsif value <= -1000000 %}
-  ${{ value | divided_by: 1000000.0 | round: 1 }}M
-  {% elsif value >= 1000 %}
-  ${{ value | divided_by: 1000.0 | round: 1 }}K
-  {% elsif value <= -1000 %}
-  ${{ value | divided_by: 1000.0 | round: 1 }}K
-  {% else %}
-  {{ rendered_value }}
-  {% endif %}"
-}
-
 constant: wtd_measures { value: "wtd_orders,ly_wtd_orders" }
 constant: mtd_measures { value: "mtd_orders,ly_mtd_orders" }
 constant: qtd_measures { value: "qtd_orders,ly_qtd_orders" }
