@@ -174,7 +174,6 @@
     explore: order_items_liquid
     type: looker_line
     fields: [order_items_liquid.ty_orders, order_items_liquid.ly_orders, fiscal_calendar.fiscal_month_begin_date]
-    fill_fields: [fiscal_calendar.fiscal_month_begin_date]
     sorts: [fiscal_calendar.fiscal_month_begin_date]
     limit: 500
     column_limit: 50
