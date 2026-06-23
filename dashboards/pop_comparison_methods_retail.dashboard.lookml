@@ -105,7 +105,7 @@
     row: 0
     col: 0
     width: 24
-    height: 12
+    height: 17
     tab_name: 'PoP Compatibility Guide'
 
   # ==========================================
@@ -141,7 +141,7 @@
     row: 0
     col: 0
     width: 24
-    height: 6
+    height: 7
     tab_name: 'Liquid-Based Custom Calendar'
 
   - title: Liquid-Based - Data Table
@@ -161,7 +161,7 @@
       value_format_name: percent_1
     listen:
       Fiscal Window: fiscal_calendar.fiscal_window
-    row: 6
+    row: 7
     col: 0
     width: 12
     height: 8
@@ -185,7 +185,7 @@
     show_x_axis_ticks: true
     listen:
       Fiscal Window: fiscal_calendar.fiscal_window
-    row: 6
+    row: 7
     col: 12
     width: 12
     height: 8
@@ -225,7 +225,7 @@
     row: 0
     col: 0
     width: 24
-    height: 6
+    height: 7
     tab_name: 'Native Custom Calendar'
 
   - title: Native Custom Calendar - Data Table
@@ -240,7 +240,7 @@
     show_view_names: false
     filters:
       order_items_native.created_custom_date: 1 custom years
-    row: 6
+    row: 7
     col: 0
     width: 12
     height: 8
@@ -267,7 +267,7 @@
     interpolation: linear
     filters:
       order_items_native.created_custom_date: 1 custom years
-    row: 6
+    row: 7
     col: 12
     width: 12
     height: 8
