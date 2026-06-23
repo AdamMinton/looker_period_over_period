@@ -14,7 +14,6 @@ view: order_items_liquid {
       cal_day_pryr_day.is_this_year: "yes"
     ]
     value_format_name: decimal_0
-    html:@{html_large_value_format};;
   }
 
   measure: ly_orders {
@@ -27,7 +26,6 @@ view: order_items_liquid {
       cal_day_pryr_day.is_last_year: "yes"
     ]
     value_format_name: decimal_0
-    html:@{html_large_value_format};;
   }
 
   measure: yoy_orders {
@@ -47,7 +45,6 @@ view: order_items_liquid {
       cal_day_pryr_day.is_this_year: "yes"
     ]
     value_format_name: decimal_0
-    html:@{html_large_value_format};;
   }
 
   measure: ly_items {
@@ -59,7 +56,6 @@ view: order_items_liquid {
       cal_day_pryr_day.is_last_year: "yes"
     ]
     value_format_name: decimal_0
-    html:@{html_large_value_format};;
   }
 
   measure: yoy_items {
