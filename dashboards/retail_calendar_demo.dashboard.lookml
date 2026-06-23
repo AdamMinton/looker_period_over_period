@@ -72,8 +72,8 @@
       Anchor Date: anchor_date.anchor_date
     row: 6
     col: 0
-    width: 24
-    height: 6
+    width: 12
+    height: 8
     tab_name: 'Option 1: Parameter Based'
 
   - title: Option 1 - Orders Over Time
@@ -96,9 +96,9 @@
     listen:
       Fiscal Window: fiscal_calendar.fiscal_window
       Anchor Date: anchor_date.anchor_date
-    row: 12
-    col: 0
-    width: 24
+    row: 6
+    col: 12
+    width: 12
     height: 8
     tab_name: 'Option 1: Parameter Based'
 
@@ -152,8 +152,8 @@
       Anchor Date: anchor_date.anchor_date
     row: 6
     col: 0
-    width: 24
-    height: 6
+    width: 12
+    height: 8
     tab_name: 'Option 2: Measure Based'
 
   - title: Option 2 - Period Summary
@@ -176,9 +176,9 @@
     show_x_axis_ticks: true
     listen:
       Anchor Date: anchor_date.anchor_date
-    row: 12
-    col: 0
-    width: 24
+    row: 6
+    col: 12
+    width: 12
     height: 8
     tab_name: 'Option 2: Measure Based'
 
@@ -239,7 +239,7 @@
     row: 6
     col: 0
     width: 24
-    height: 6
+    height: 8
     tab_name: 'Option 3: Pivoted Grid'
 
   # ==========================================
@@ -289,12 +289,12 @@
     limit: 500
     column_limit: 50
     show_view_names: false
-    filters:
-      order_items_option_4.created_custom_year: "FY2025, FY2026"
+    listen:
+      "Option 4: Custom Year": order_items_option_4.created_custom_year
     row: 6
     col: 0
-    width: 24
-    height: 6
+    width: 12
+    height: 8
     tab_name: 'Option 4: Custom Calendar'
 
   - title: Option 4 - YoY Orders
@@ -303,14 +303,14 @@
     explore: order_items_option_4
     type: looker_line
     fields: [order_items_option_4.orders_count, order_items_option_4.orders_count_last_year, order_items_option_4.created_custom_year]
-    filters:
-      order_items_option_4.created_custom_year: "FY2025, FY2026"
     sorts: [order_items_option_4.created_custom_year desc]
     limit: 500
     column_limit: 50
-    row: 12
-    col: 0
-    width: 24
+    listen:
+      "Option 4: Custom Year": order_items_option_4.created_custom_year
+    row: 6
+    col: 12
+    width: 12
     height: 8
     tab_name: 'Option 4: Custom Calendar'
 
@@ -331,10 +331,11 @@
     explore: order_items_option_2
     listens_to_filters: []
     field: anchor_date.anchor_date
+
   - name: Fiscal Window
     title: Fiscal Window
     type: field_filter
-    default_value: LW
+    default_value: YTD
     allow_multiple_values: true
     required: false
     ui_config:
@@ -344,3 +345,17 @@
     explore: order_items_option_1
     listens_to_filters: []
     field: fiscal_calendar.fiscal_window
+
+  - name: "Option 4: Custom Year"
+    title: "Option 4: Custom Year"
+    type: field_filter
+    default_value: "FY2025, FY2026"
+    allow_multiple_values: true
+    required: false
+    ui_config:
+      type: tag_list
+      display: inline
+    model: looker_period_over_period
+    explore: order_items_option_4
+    listens_to_filters: []
+    field: order_items_option_4.created_custom_year
