@@ -105,7 +105,7 @@
     row: 0
     col: 0
     width: 24
-    height: 17
+    height: 18
     tab_name: 'PoP Compatibility Guide'
 
   # ==========================================
