@@ -28,6 +28,7 @@ view: fiscal_calendar_custom {
   dimension: reference_date {
     type: date
     datatype: timestamp
+    convert_tz: no
     sql: ${TABLE}.reference_date ;;
     primary_key: yes
   }
