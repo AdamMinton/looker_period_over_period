@@ -161,7 +161,6 @@
       value_format_name: percent_1
     listen:
       Fiscal Window: fiscal_calendar.fiscal_window
-      Anchor Date: anchor_date.anchor_date
     row: 6
     col: 0
     width: 12
@@ -186,7 +185,6 @@
     show_x_axis_ticks: true
     listen:
       Fiscal Window: fiscal_calendar.fiscal_window
-      Anchor Date: anchor_date.anchor_date
     row: 6
     col: 12
     width: 12
@@ -269,20 +267,6 @@
   # FILTERS CONFIGURATION
   # ==========================================
   filters:
-  - name: Anchor Date
-    title: Anchor Date
-    type: field_filter
-    default_value: 2026/04/29
-    allow_multiple_values: false
-    required: false
-    ui_config:
-      type: date_picker
-      display: inline
-    model: looker_period_over_period
-    explore: order_items_liquid
-    listens_to_filters: []
-    field: anchor_date.anchor_date
-
   - name: Fiscal Window
     title: Fiscal Window
     type: field_filter
