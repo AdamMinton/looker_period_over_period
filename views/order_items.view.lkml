@@ -8,7 +8,23 @@ view: order_items {
   }
   dimension_group: created {
     type: time
-    timeframes: [raw, time, date, week, month, quarter, year]
+    timeframes: [
+      raw,
+      time,
+      hour_of_day,
+      date,
+      day_of_week,
+      day_of_week_index,
+      day_of_month,
+      day_of_year,
+      week,
+      week_of_year,
+      month,
+      month_name,
+      month_num,
+      quarter,
+      year
+    ]
     sql: ${TABLE}.created_at ;;
   }
   dimension_group: delivered {
@@ -54,4 +70,12 @@ view: order_items {
     type: count
     drill_fields: [id]
   }
+  measure: total_sale_price {
+    label: "Total Sales"
+    type: sum
+    sql: ${sale_price} ;;
+    value_format_name: usd
+    drill_fields: [created_date]
+  }
 }
+
