@@ -12,7 +12,7 @@
     model: looker_period_over_period
     explore: order_items_method_1
     field: order_items_method_1.created_year
-    default_value: "this year, last year"
+    default_value: "1 years, 1 year ago for 1 year"
 
   # Method 2
   - name: m2_date_filter
@@ -21,7 +21,7 @@
     model: looker_period_over_period
     explore: order_items_method_2
     field: order_items_method_2.created_date
-    default_value: "last 2 years"
+    default_value: "2 years"
   - name: m2_breakdown
     title: "M2: Group By (Row)"
     type: field_filter
@@ -44,7 +44,7 @@
     model: looker_period_over_period
     explore: order_items_method_3
     field: order_items_method_3.current_date_range
-    default_value: "this year"
+    default_value: "1 years"
   - name: m3_compare_to
     title: "M3: Compare To"
     type: field_filter
@@ -60,7 +60,7 @@
     model: looker_period_over_period
     explore: order_items_method_4
     field: order_items_method_4.current_date_range
-    default_value: "this year"
+    default_value: "1 years"
   - name: m4_compare_to
     title: "M4: Compare To"
     type: field_filter
@@ -83,14 +83,14 @@
     model: looker_period_over_period
     explore: order_items_method_5
     field: order_items_method_5.current_date_range
-    default_value: "this year"
+    default_value: "1 years"
   - name: m5_previous_range
     title: "M5: Custom Prior Date Range"
     type: field_filter
     model: looker_period_over_period
     explore: order_items_method_5
     field: order_items_method_5.previous_date_range
-    default_value: "last year"
+    default_value: "1 year ago for 1 year"
 
   # Method 6
   - name: m6_first_range
@@ -99,14 +99,14 @@
     model: looker_period_over_period
     explore: order_items_method_6
     field: order_items_method_6.first_period_filter
-    default_value: "2025-01-01 to 2025-12-31"
+    default_value: "1 year ago for 1 year"
   - name: m6_second_range
     title: "M6: Second Period Filter"
     type: field_filter
     model: looker_period_over_period
     explore: order_items_method_6
     field: order_items_method_6.second_period_filter
-    default_value: "2026-01-01 to 2026-12-31"
+    default_value: "1 years"
 
   # Method 7
   - name: m7_date_range
@@ -115,7 +115,7 @@
     model: looker_period_over_period
     explore: order_items_method_7
     field: order_items_method_7.date_filter
-    default_value: "this year"
+    default_value: "1 years"
 
   # Method 8
   - name: m8_date_range
@@ -124,7 +124,7 @@
     model: looker_period_over_period
     explore: order_items_method_8
     field: pop.date_filter
-    default_value: "this year"
+    default_value: "1 years"
   - name: m8_breakdown
     title: "M8: Break Down By"
     type: field_filter
@@ -154,7 +154,7 @@
     model: looker_period_over_period
     explore: order_items_method_9
     field: order_items_method_9.created_month
-    default_value: "this year"
+    default_value: "1 years"
 
   tabs:
   - name: 'Tab 1: Native & Parameter-Based'
